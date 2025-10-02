@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header>
+      <nav
+        class="px-6 lg:px-12 py-3 bg-white shadow-sm flex items-center justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="font-semibold w-10 h-10 bg-blue-600 text-white rounded-md flex items-center justify-center"
+          >
+            R
+          </div>
+          <div class="text-lg font-medium">Route to Tailwind CSS</div>
+        </div>
+
+        <div class="hidden md:flex gap-4">
+          <a href="#" class="text-sm">Home</a>
+          <a href="#" class="text-sm">Components</a>
+          <a href="#" class="text-sm">Practice</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7 mr-6 hover:text-blue-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <div id="menu" class="hidden md:hidden bg-white shadow-sm px-6 py-4">
+        <a href="#" class="block py-2 text-sm hover:text-blue-600">Home</a>
+        <a href="#" class="block py-2 text-sm hover:text-blue-600"
+          >Components</a
+        >
+        <a href="#" class="block py-2 text-sm hover:text-blue-600">Practice</a>
+      </div>
+    </header>
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+    <main class="mx-4 sm:mx-12 lg:mx-20 my-12">
+      <div class="bg-white px-6 lg:px-12 py-8 rounded-2xl shadow">
+        <h1 class="font-bold text-2xl mb-2">
+          Build Interfaces fast with Tailwind CSS
+        </h1>
+        <p class="text-gray-600 mb-6">
+          Utility-first classes let you compose UI directly to HTML. Happy
+          learning and coding using TailwindCSS!
+        </p>
+        <div class="space-x-2">
+          <a
+            href="#components"
+            class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+            >Try Components</a
+          >
+          <a href="#practice" class="px-4 py-2 rounded border hover:bg-gray-50"
+            >Do practice tasks</a
+          >
+        </div>
+      </div>
+
+      <section id="components" class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Card components</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div
+            class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow"
+          >
+            <div class="flex mb-3 flex-col">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-1">User</h3>
+                <p class="text-gray-500 text-sm">Name, role, quick actions.</p>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button class="px-4 py-1 rounded border hover:bg-gray-50">
+                  Edit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow"
+          >
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Stats</h3>
+            <p class="text-gray-500 text-sm mb-6">
+              Show counters or badges here.
+            </p>
+            <div class="flex items-baseline gap-3">
+              <div class="text-5xl font-bold text-gray-900" id="statsCount">
+                42
+              </div>
+              <div class="text-gray-500 text-sm font-medium">active</div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow"
+          >
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Notes</h3>
+            <p class="text-gray-500 text-sm mb-4">
+              Short multi-line content fits well.
+            </p>
+          </div>
+        </div>
+
+        <section id="practice" class="mt-12 mb-16">
+          <h2 class="font-semibold text-2xl pb-3">Simple Form</h2>
+          <div class="mt-8">
+            <form
+              action=""
+              class="flex flex-col gap-4 rounded-2xl shadow bg-white p-8 max-w-auto w-full mx-auto"
+            >
+              <div class="flex flex-col gap-1">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Your name"
+                  class="border rounded p-2"
+                />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@email.com"
+                  class="border rounded p-2"
+                />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Short note"
+                  class="border rounded p-2"
+                ></textarea>
+              </div>
+              <div class="flex items-center justify-between">
+                <p>Try changing classes to see effects.</p>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="font-semibold text-2xl pb-3">Table</h2>
+          <div class="overflow-x-auto rounded-2xl shadow">
+            <table
+              class="min-w-full bg-white border border-gray-200 rounded-lg"
+            >
+              <thead class="bg-gray-100 text-center">
+                <tr>
+                  <th class="px-4 py-2">#</th>
+                  <th class="px-4 py-2">Name</th>
+                  <th class="px-4 py-2">Role</th>
+                  <th class="px-4 py-2">Status</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr class="border-t">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">John Dough</td>
+                  <td class="px-4 py-2">Admin</td>
+                  <td class="px-4 py-2 text-center">
+                    <span
+                      class="px-4 py-2 bg-green-100 text-green-600 rounded-md text-sm font-semibold"
+                    >
+                      Active
+                    </span>
+                  </td>
+                </tr>
+                <tr class="border-t">
+                  <td class="px-4 py-2">2</td>
+                  <td class="px-4 py-2">Jane Doe</td>
+                  <td class="px-4 py-2">Editor</td>
+                  <td class="px-4 py-2 text-center">
+                    <span
+                      class="px-4 py-2 bg-yellow-100 rounded-lg text-yellow-500 text-sm font-semibold"
+                      >Pending</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="bg-white mx-200 mt-12 mb-0">
+          <p class="text-center text-gray-500 text-sm p-4">
+            Use this file to teach utility and rapid prototyping.
+          </p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

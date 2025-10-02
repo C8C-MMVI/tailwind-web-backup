@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Responsive Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <nav class="flex items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-md font-bold"
+          >
+            R
+          </div>
+          <span class="font-semibold text-lg">Responsive Demo</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-6">
+          <a href="#" class="hover:text-blue-600">Home</a>
+          <a href="#" class="hover:text-blue-600">About</a>
+          <a href="#" class="hover:text-blue-600">Services</a>
+          <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="menu" class="hidden md:hidden px-6 pb-4">
+        <a href="#" class="block py-2 hover:text-blue-600">Home</a>
+        <a href="#" class="block py-2 hover:text-blue-600">About</a>
+        <a href="#" class="block py-2 hover:text-blue-600">Services</a>
+        <a href="#" class="block py-2 hover:text-blue-600">Contact</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 py-10 max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-4">Welcome to the Demo Site</h1>
+      <p class="mb-6">
+        This is a small responsive layout using Tailwind CSS. Resize your
+        browser window to see the navigation switch between desktop and mobile
+        mode.
+      </p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="font-semibold text-lg mb-2">Card One</h2>
+          <p class="text-sm">Some quick example content to fill this card.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="font-semibold text-lg mb-2">Card Two</h2>
+          <p class="text-sm">More content inside another card.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="font-semibold text-lg mb-2">Card Three</h2>
+          <p class="text-sm">Even more content inside a third card.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Script for Toggle -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
